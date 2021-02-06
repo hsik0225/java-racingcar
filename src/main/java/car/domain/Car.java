@@ -15,10 +15,23 @@ final class Car {
     
     private final Engine engine;
     
+<<<<<<< HEAD
     private Car(Builder builder) {
         this.carName = builder.carName;
         this.position = builder.position;
         this.engine = builder.engine;
+=======
+    public Car(String carName) {
+        this(carName, new RacingEngine());
+    }
+    
+    public Car(String carName, Engine engine) {
+        this(Name.from(carName), new Position(), engine);
+    }
+    
+    public Car(String carName, int position, Engine engine) {
+        this(Name.from(carName), Position.from(position), engine);
+>>>>>>> 833c9e1... refactor(car):빌더 패턴 삭제 및 빌더 패턴을 사용하는 코드 수정
     }
     
     private Car(Name carName, Position position, Engine engine) {
